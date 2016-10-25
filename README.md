@@ -24,5 +24,5 @@ Just set the necessary options in XenForo Options -> [A] Profile Post Limit
 ## Contributing
 We appreciate all contributions to this software to help improve FOSS software in XenForo. Just submit a pull request!
 
-### XenForo Resource
+## XenForo Resource
 https://xenforo.com/community/resources/profile-post-limits.4916/
