@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="aProfilePostLimit" title="[A] Profile Post Limit" version_string="1.0.0" version_id="1000071" url="https://www.apantic.com" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="load_class_datawriter" execute_order="10" callback_class="Apantic_ProfilePostLimit_Listener" callback_method="extend_xf_pp_listener" active="1" hint="XenForo_DataWriter_DiscussionMessage_ProfilePost" description="Apantic_ProfilePostLimit_DataWriter_DiscussionMessage_ProfilePost"/>
+    <listener event_id="load_class_datawriter" execute_order="10" callback_class="Apantic_ProfilePostLimit_Listener" callback_method="extend_xf_ppc_listener" active="1" hint="XenForo_DataWriter_ProfilePostComment" description="Apantic_ProfilePostLimit_DataWriter_ProfilePostComment"/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups>
+    <group group_id="aProfilePostLimit" display_order="15000" debug_only="0"/>
+    <option option_id="applCharacterLimit" edit_format="spinbox" data_type="unsigned_integer" can_backup="1">
+      <default_value>140</default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="aProfilePostLimit" display_order="1"/>
+    </option>
+    <option option_id="applMessageLimit" edit_format="spinbox" data_type="unsigned_integer" can_backup="1">
+      <default_value>420</default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="aProfilePostLimit" display_order="5"/>
+    </option>
+    <option option_id="applTaggedUserLimit" edit_format="spinbox" data_type="unsigned_integer" can_backup="1">
+      <default_value>0</default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="aProfilePostLimit" display_order="10"/>
+    </option>
+  </optiongroups>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="option_applCharacterLimit" version_id="1000071" version_string="1.0.0"><![CDATA[Character Limit]]></phrase>
+    <phrase title="option_applCharacterLimit_explain" version_id="1000071" version_string="1.0.0"><![CDATA[Character limit imposed. (140 by default)]]></phrase>
+    <phrase title="option_applMessageLimit" version_id="1000071" version_string="1.0.0"><![CDATA[Message Limit]]></phrase>
+    <phrase title="option_applMessageLimit_explain" version_id="1000071" version_string="1.0.0"><![CDATA[The limit of messages (including replies) you wish to impose. (default 420). This MUST be greater than the value above, otherwise the value above will NOT work.]]></phrase>
+    <phrase title="option_applTaggedUserLimit" version_id="1000071" version_string="1.0.0"><![CDATA[Tagged User Limit]]></phrase>
+    <phrase title="option_applTaggedUserLimit_explain" version_id="1000071" version_string="1.0.0"><![CDATA[Limit of how many users can be tagged in 1 profile comment?.(0 by default - unlimited)]]></phrase>
+    <phrase title="option_group_aProfilePostLimit" version_id="1000071" version_string="1.0.0"><![CDATA[[A] Profile Post Limit]]></phrase>
+    <phrase title="option_group_aProfilePostLimit_description" version_id="1000071" version_string="1.0.0"><![CDATA[Options for the [A] Profile Post Limit add-on.]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates/>
+  <public_template_modifications>
+    <modification template="page_container_js_head" modification_key="applJsHead" description="Add injection to JS head" execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[<!--XenForo_Require:JS-->]]></find>
+      <replace><![CDATA[<script src="{xen:helper javaScriptUrl, '{$javaScriptSource}/apantic/profilepostlimit/profile_post_limit.min.js?_v={$xenOptions.jsVersion}'}"></script>
+$0]]></replace>
+    </modification>
+    <modification template="page_container_js_head" modification_key="applJsHeadOption" description="Add options to JS head for use in extension" execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[<!--XenForo_Require:JS-->]]></find>
+      <replace><![CDATA[<script>$.extend(XenForo, {ApplCharacterLimitOption: {$xenOptions.applCharacterLimit}});</script>
+$0]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
