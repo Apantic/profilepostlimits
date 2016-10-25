@@ -2,6 +2,8 @@
 
 This add-on allows you to control the limitations on profile posts that are hardcoded into the core.
 
+Copyright 2016, Apantic Limited
+
 ## Features
 * Change the profile post character limit, 140 by default (twitter style)
 * Change the profile post message limits, 420 by default
