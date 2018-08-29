@@ -2,8 +2,6 @@
 
 This add-on allows you to control the limitations on profile posts that are hardcoded into the core.
 
-Copyright 2016, Apantic Limited
-
 ## Features
 * Change the profile post character limit, 140 by default (twitter style)
 * Change the profile post message limits, 420 by default
@@ -24,13 +22,13 @@ The add-on should now be installed, and a short rebuilding process should occur.
 Just set the necessary options in XenForo Options -> [A] Profile Post Limit
 
 ## Contributing
-We appreciate all contributions to this software to help improve FOSS software in XenForo. Just submit a pull request!
+We appreciate all contributions. Just submit a pull request!
 
 ## XenForo Resource
 https://xenforo.com/community/resources/profile-post-limits.4916/
 
 ## Legal Stuff
-   Copyright 2016, Apantic Limited
+   Copyright 2016 nanocode
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
