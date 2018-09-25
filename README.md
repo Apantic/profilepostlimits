@@ -14,7 +14,7 @@ This add-on allows you to control the limitations on profile posts that are hard
 ## Installation
 1. Unzip profilepostlimits-{version}.zip
 2. Upload the contents of the upload directory to your XenForo installation
-3. Install from uploaded file: Upload addon-nProfilePostLimit.xml
+3. Install from uploaded file: Upload addon-aProfilePostLimit.xml
 
 The add-on should now be installed, and a short rebuilding process should occur. Once done, the installation has been successful!
 
